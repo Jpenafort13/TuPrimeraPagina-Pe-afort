@@ -1,0 +1,34 @@
+{% extends "App/index.html" %}
+
+{% load static %}
+
+{% block titulo%}Buscar Clase{% endblock titulo%}
+{% block bloque %}
+
+
+    <h3>Podes buscar una clase por su codigo:</h3>
+
+    <form action="App/buscarClase/" method="GET">
+
+        <input type="text" name="codigo" id="codigo">
+
+        <input type="submit" value="Buscar">
+
+
+    </form>
+
+    
+
+    {% if clases %}
+
+    <p>Estamos buscando la clase con codigo: {{codigo}}</p>
+
+    <ul>
+		<li> {{clase.codigo}} </li>
+		
+
+    </ul>
+
+    {% endif %}
+
+{% endblock bloque%}
